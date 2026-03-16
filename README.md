@@ -117,8 +117,8 @@ PSD analysis reveals three failure mechanisms in complex models:
 
 
 ### 📜 License
-
-This work is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
+Code is licensed under the [MIT License](LICENSE). 
+The paper is licensed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 
 ### 🙏 Acknowledgements
