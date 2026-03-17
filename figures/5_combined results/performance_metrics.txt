@@ -1,0 +1,48 @@
+================================================================================
+MODEL PERFORMANCE COMPARISON - ICLR ML4RS WORKSHOP
+================================================================================
+
+
+Vanilla U-Net:
+  RMSE:          0.838 cm
+  MAE:           0.370 cm
+  Median Error:  0.134 cm
+  Std Dev:       0.838 cm
+  95th %ile:     1.626 cm
+  99th %ile:     3.988 cm
+  Precision@0.5: 83.57%
+  Precision@1.0: 91.18%
+  Precision@2.0: 96.33%
+
+Attention U-Net:
+  RMSE:          1.528 cm
+  MAE:           0.844 cm
+  Median Error:  0.335 cm
+  Std Dev:       1.528 cm
+  95th %ile:     3.400 cm
+  99th %ile:     6.159 cm
+  Precision@0.5: 60.83%
+  Precision@1.0: 75.56%
+  Precision@2.0: 86.85%
+
+Enhanced U-Net:
+  RMSE:          1.149 cm
+  MAE:           0.647 cm
+  Median Error:  0.281 cm
+  Std Dev:       1.149 cm
+  95th %ile:     2.638 cm
+  99th %ile:     4.491 cm
+  Precision@0.5: 65.64%
+  Precision@1.0: 80.69%
+  Precision@2.0: 91.48%
+
+Hybrid Multi-Scale:
+  RMSE:          1.595 cm
+  MAE:           1.001 cm
+  Median Error:  0.514 cm
+  Std Dev:       1.595 cm
+  95th %ile:     3.486 cm
+  99th %ile:     5.866 cm
+  Precision@0.5: 49.32%
+  Precision@1.0: 67.52%
+  Precision@2.0: 84.03%
