@@ -130,6 +130,18 @@ PSD analysis reveals three failure mechanisms in complex models:
 2. **Capacity-data mismatch** - Large models overfit frame-specific atmospheric noise rather than underlying physics.
 3. **Multi-scale misapplication** - ASPP aggregation introduces aliasing artifacts in smooth-field regression.
 
+### 📜 Citation
+ 
+```bibtex
+@inproceedings{
+  singh2026when,
+  title={When Less Is More: Simplicity Beats Complexity for Physics-Constrained In{SAR} Phase Unwrapping},
+  author={Prabhjot Singh and Manmeet Singh},
+  booktitle={4th ICLR Workshop on Machine Learning for Remote Sensing (Main Track)},
+  year={2026},
+  url={https://openreview.net/forum?id=liJldeR5ZX}
+}
+```
 
 ### 📜 License
 Code is licensed under the [MIT License](LICENSE). 
