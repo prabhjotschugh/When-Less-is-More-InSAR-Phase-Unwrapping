@@ -73,6 +73,21 @@ We evaluate four U-Net variants of increasing complexity on an identical 4-level
 - **H-UNet** - Hybrid Multi-Scale with ASPP (17.21M params)
 
 
+### 🤖 Pretrained Weights
+
+Pre-trained model weights for all 4 architectures are available on Hugging Face:
+
+👉 **[huggingface.co/Prabhjotschugh/InSAR-Phase-Unwrapping-Models](https://huggingface.co/Prabhjotschugh/InSAR-Phase-Unwrapping-Models)**
+
+Download the `.pth` files and place them in the root directory before running evaluation scripts.
+
+| Model | File | Size |
+|---|---|---|
+| ✅ Vanilla U-Net | `vanilla_unet_model.pth` | 93 MB |
+| Enhanced U-Net | `enhanced_unet_model.pth` | 100 MB |
+| Attention U-Net | `attention_unet_model.pth` | 137 MB |
+| Hybrid Multi-Scale | `hybrid_model.pth` | 207 MB |
+
 
 ### 🚀 Getting Started
 
@@ -115,6 +130,18 @@ PSD analysis reveals three failure mechanisms in complex models:
 2. **Capacity-data mismatch** - Large models overfit frame-specific atmospheric noise rather than underlying physics.
 3. **Multi-scale misapplication** - ASPP aggregation introduces aliasing artifacts in smooth-field regression.
 
+### 📜 Citation
+ 
+```bibtex
+@inproceedings{
+  singh2026when,
+  title={When Less Is More: Simplicity Beats Complexity for Physics-Constrained In{SAR} Phase Unwrapping},
+  author={Prabhjot Singh and Manmeet Singh},
+  booktitle={4th ICLR Workshop on Machine Learning for Remote Sensing (Main Track)},
+  year={2026},
+  url={https://openreview.net/forum?id=liJldeR5ZX}
+}
+```
 
 ### 📜 License
 Code is licensed under the [MIT License](LICENSE). 
