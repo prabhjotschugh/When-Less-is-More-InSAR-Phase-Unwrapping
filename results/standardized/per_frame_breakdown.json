@@ -1,0 +1,142 @@
+[
+  {
+    "frame_id": "001A_05031_131313",
+    "display_name": "Calatrava",
+    "regime": "volcanic",
+    "n_patches": 270,
+    "Vanilla_rmse_cm": 0.8444576859474182,
+    "Enhanced_rmse_cm": 0.9617049694061279,
+    "Attention_rmse_cm": 0.9376765489578247,
+    "Hybrid_rmse_cm": 1.1185967922210693
+  },
+  {
+    "frame_id": "003D_09757_111111",
+    "display_name": "Kelut/Semeru/Lawu",
+    "regime": "volcanic",
+    "n_patches": 10,
+    "Vanilla_rmse_cm": 1.525189757347107,
+    "Enhanced_rmse_cm": 1.3468749523162842,
+    "Attention_rmse_cm": 1.6016759872436523,
+    "Hybrid_rmse_cm": 1.6601159572601318
+  },
+  {
+    "frame_id": "005A_07021_131313",
+    "display_name": "Pico de Orizaba",
+    "regime": "volcanic",
+    "n_patches": 7,
+    "Vanilla_rmse_cm": 2.4388527870178223,
+    "Enhanced_rmse_cm": 3.063580274581909,
+    "Attention_rmse_cm": 2.6249899864196777,
+    "Hybrid_rmse_cm": 2.825773239135742
+  },
+  {
+    "frame_id": "006D_05111_131313",
+    "display_name": "Sabalan",
+    "regime": "volcanic",
+    "n_patches": 158,
+    "Vanilla_rmse_cm": 1.0331405401229858,
+    "Enhanced_rmse_cm": 1.0947155952453613,
+    "Attention_rmse_cm": 1.14590322971344,
+    "Hybrid_rmse_cm": 1.3609809875488281
+  },
+  {
+    "frame_id": "006D_05310_131313",
+    "display_name": "Sahand",
+    "regime": "continental_tectonic",
+    "n_patches": 406,
+    "Vanilla_rmse_cm": 0.595575213432312,
+    "Enhanced_rmse_cm": 0.6203694343566895,
+    "Attention_rmse_cm": 0.6170721650123596,
+    "Hybrid_rmse_cm": 0.7177078723907471
+  },
+  {
+    "frame_id": "007D_05293_151310",
+    "display_name": "Methana",
+    "regime": "volcanic",
+    "n_patches": 75,
+    "Vanilla_rmse_cm": 1.355971336364746,
+    "Enhanced_rmse_cm": 1.6081032752990723,
+    "Attention_rmse_cm": 1.472706913948059,
+    "Hybrid_rmse_cm": 1.9405244588851929
+  },
+  {
+    "frame_id": "010A_09915_111413",
+    "display_name": "Sangeang Api / Ranakah",
+    "regime": "volcanic",
+    "n_patches": 1,
+    "Vanilla_rmse_cm": 0.575937807559967,
+    "Enhanced_rmse_cm": 0.641704261302948,
+    "Attention_rmse_cm": 0.9706064462661743,
+    "Hybrid_rmse_cm": 2.1142804622650146
+  },
+  {
+    "frame_id": "010A_16318_111313",
+    "display_name": "Ritmann / Melbourne",
+    "regime": "volcanic",
+    "n_patches": 72,
+    "Vanilla_rmse_cm": 2.703014612197876,
+    "Enhanced_rmse_cm": 2.4346694946289062,
+    "Attention_rmse_cm": 3.0278501510620117,
+    "Hybrid_rmse_cm": 3.393531560897827
+  },
+  {
+    "frame_id": "010D_13610_131313",
+    "display_name": "Cerro Hudson",
+    "regime": "glacio_tectonic",
+    "n_patches": 278,
+    "Vanilla_rmse_cm": 0.7468660473823547,
+    "Enhanced_rmse_cm": 0.7724400758743286,
+    "Attention_rmse_cm": 0.8180621266365051,
+    "Hybrid_rmse_cm": 0.897475004196167
+  },
+  {
+    "frame_id": "010D_13986_131310",
+    "display_name": "Viedma/Lautaro/Aguilera",
+    "regime": "glacio_tectonic",
+    "n_patches": 9,
+    "Vanilla_rmse_cm": 1.278704285621643,
+    "Enhanced_rmse_cm": 1.1534769535064697,
+    "Attention_rmse_cm": 0.892063558101654,
+    "Hybrid_rmse_cm": 1.2728427648544312
+  },
+  {
+    "frame_id": "011A_04472_131313",
+    "display_name": "Middle Gobi",
+    "regime": "continental_tectonic",
+    "n_patches": 675,
+    "Vanilla_rmse_cm": 0.5070618391036987,
+    "Enhanced_rmse_cm": 0.40223732590675354,
+    "Attention_rmse_cm": 0.5498186349868774,
+    "Hybrid_rmse_cm": 0.4844004213809967
+  },
+  {
+    "frame_id": "012D_06537_131313",
+    "display_name": "Durango Volcanic Field",
+    "regime": "volcanic",
+    "n_patches": 510,
+    "Vanilla_rmse_cm": 0.5588460564613342,
+    "Enhanced_rmse_cm": 0.5159698128700256,
+    "Attention_rmse_cm": 0.5824521780014038,
+    "Hybrid_rmse_cm": 0.6285403370857239
+  },
+  {
+    "frame_id": "020A_05163_131313",
+    "display_name": "Black Rock Desert",
+    "regime": "continental_tectonic",
+    "n_patches": 1759,
+    "Vanilla_rmse_cm": 0.7435701489448547,
+    "Enhanced_rmse_cm": 0.8833389282226562,
+    "Attention_rmse_cm": 0.8845887780189514,
+    "Hybrid_rmse_cm": 1.109545350074768
+  },
+  {
+    "frame_id": "020A_05362_131313",
+    "display_name": "San Francisco Volcanic Field",
+    "regime": "volcanic",
+    "n_patches": 2000,
+    "Vanilla_rmse_cm": 0.6962381601333618,
+    "Enhanced_rmse_cm": 0.8362399935722351,
+    "Attention_rmse_cm": 0.8629175424575806,
+    "Hybrid_rmse_cm": 1.0743224620819092
+  }
+]

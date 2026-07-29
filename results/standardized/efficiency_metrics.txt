@@ -1,0 +1,16 @@
+================================================================================
+MODEL EFFICIENCY COMPARISON — IEEE GRSL (Standardized Protocol)
+================================================================================
+
+All 4 models trained under identical protocol: FP32, dropout=0.15,
+weight_decay=1e-4, identical Huber+gradient loss, identical batch size/LR/epochs.
+Only architecture (param count, layer types) differs between models.
+
+Model                     Params       Size (MB)    FLOPs        Time (ms)      
+--------------------------------------------------------------------------------
+Vanilla U-Net             7.76M        29.62        1017.63G     2.74    ± 0.04 
+Attention U-Net           11.37M       43.38        1490.66G     6.81    ± 0.04 
+Enhanced U-Net            8.29M        31.61        1086.21G     5.97    ± 0.04 
+Hybrid Multi-Scale        17.21M       65.64        2255.24G     6.74    ± 0.05 
+
+================================================================================

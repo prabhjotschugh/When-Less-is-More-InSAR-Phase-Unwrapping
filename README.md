@@ -7,13 +7,33 @@
 
 **Authors:** [Prabhjot Singh](https://github.com/prabhjotschugh) (UT Austin · RediMinds Inc.) · Manmeet Singh (UT Austin · Western Kentucky University)
 
+> **A note on the two result sets in this repo:** This project has two published versions - the original ICLR ML4RS 2026 workshop paper, and an extended IEEE GRSL journal version. During journal review, we retrained all four models under a single, fully standardized protocol (identical precision, dropout, weight decay, and loss across all models) to eliminate training confounds that existed in the workshop version. **Both code and results for both protocols are kept in this repo, clearly labeled, so nothing from either publication is lost.** The Key Results below are the standardized/GRSL numbers, since they reflect the final peer-reviewed protocol.
+
 &nbsp;
 
 ### 📌 TL;DR
 
 We challenge the trend of adopting complex computer vision architectures for InSAR phase unwrapping. Through a large-scale ablation study on a **global LiCSAR benchmark (20 frames, 39,724 patches, 651M pixels)**, we show that a **vanilla U-Net outperforms attention-based models by 34% in R²** with **2.5× faster inference**, because convolutional locality aligns better with the physics of smooth geophysical deformation than global attention.
 
-### 🔍 Key Results
+### 🔍 Key Results - Standardized Protocol (IEEE GRSL)
+ 
+All four models trained under an identical protocol: **FP32 precision, dropout=0.15, weight decay=1e-4, identical Huber+gradient physics loss, identical batch size/LR schedule/epochs**. Architecture is the only variable distinguishing the models.
+ 
+| Model | RMSE (cm) ↓ | R² ↑ | P@1.0 (%) ↑ | Latency (ms) ↓ | Params (M) |
+|---|---|---|---|---|---|
+| **✅ Vanilla U-Net** | **1.070** | **0.810** | **83.73** | **2.74 ± 0.04** | 7.76 |
+| Enhanced U-Net | 1.325 | 0.709 | 75.85 | 5.97 ± 0.04 | 8.29 |
+| Attention U-Net | 1.439 | 0.656 | 76.57 | 6.81 ± 0.04 | 11.37 |
+| Hybrid Multi-Scale | 1.639 | 0.555 | 69.52 | 6.74 ± 0.05 | 17.21 |
+ 
+⚡ Vanilla U-Net achieves **<1cm error in 83.73% of predictions** vs only 69.52% for the Hybrid.  
+🏃 At **2.74ms inference latency**, it is the only architecture that comfortably meets sub-100ms requirements for operational volcanic and seismic early-warning systems.
+
+
+### 🔍 Results - ICLR ML4RS 2026 workshop version (mixed-precision protocol)</summary>
+
+In this earlier protocol, Vanilla and Enhanced were trained in full FP32 while Attention and Hybrid used FP16 mixed precision, and dropout/weight-decay values were not identical across models - a training confound identified during GRSL peer review and fixed in the standardized protocol above. Kept here for transparency and to preserve the workshop record.
+
 
 | Model | RMSE (cm) ↓ | R² ↑ | Latency (ms) ↓ | Params (M) |
 |---|---|---|---|---|
@@ -60,7 +80,7 @@ Our dataset spans **20 LiCSAR frames across 6 continents**, covering diverse vol
 
 
 #### Power Spectral Density & Cumulative Error Distribution
-Attention and Hybrid models inject spurious high-frequency power at >0.3 cycles/pixel — physically unphysical artifacts that violate the smoothness of elastic surface deformation.
+Attention and Hybrid models inject spurious high-frequency power at >0.3 cycles/pixel - physically unphysical artifacts that violate the smoothness of elastic surface deformation.
 
 
 ### 🏗️ Models
@@ -88,6 +108,23 @@ Download the `.pth` files and place them in the root directory before running ev
 | Attention U-Net | `attention_unet_model.pth` | 137 MB |
 | Hybrid Multi-Scale | `hybrid_model.pth` | 207 MB |
 
+### 📂 Repository Structure
+ 
+```
+├── data/                       # LiCSAR frame metadata + dataset download script
+├── figures/                    # Per-model + combined result figures, architecture diagrams
+├── results/
+│   ├── standardized/           # IEEE GRSL - standardized-protocol metrics
+│   └── mixed_precision/        # ICLR ML4RS workshop - mixed-precision metrics
+├── train/
+│   ├── standardized/           # IEEE GRSL - shared base_config.py, identical protocol
+│   └── mixed_precision/        # ICLR ML4RS workshop training scripts
+├── visualize/                  # Evaluation + visualization scripts (per-model, combined,
+│                                per-regime and per-frame breakdowns)
+├── testing and resources/      # Exploratory notebooks, data preprocessing, download utilities
+└── requirements.txt
+```
+
 
 ### 🚀 Getting Started
 
@@ -105,20 +142,31 @@ python download_dataset.py
 > ⚠️ Dataset is approximately **20GB**. Ensure sufficient disk space before downloading.
 
 #### 3. Train
+**Standardized protocol (IEEE GRSL paper):**
 ```bash
-python train_vanilla_unet.py      # Vanilla U-Net (recommended)
-python train_enhanced_unet.py     # Enhanced U-Net
-python train_attention_unet.py    # Attention U-Net
-python train_hybrid.py            # Hybrid Multi-Scale
+python train/standardized/train_vanilla_unet.py      # Vanilla U-Net (recommended)
+python train/standardized/train_enhanced_unet.py     # Enhanced U-Net
+python train/standardized/train_attention_unet.py    # Attention U-Net
+python train/standardized/train_hybrid.py            # Hybrid Multi-Scale
+```
+ 
+**Mixed-precision protocol (ICLR ML4RS workshop version):**
+```bash
+python train/mixed_precision/train_vanilla_unet.py
+python train/mixed_precision/train_enhanced_unet.py
+python train/mixed_precision/train_attention_unet.py
+python train/mixed_precision/train_hybrid.py
 ```
 
 #### 4. Evaluate & Visualize
 ```bash
-python result_vanilla_unet.py      # Vanilla U-Net (recommended)
-python result_enhanced_unet.py     # Enhanced U-Net
-python result_attention_unet.py    # Attention U-Net
-python result_hybrid.py            # Hybrid Multi-Scale
-python result_combined.py          # Combined results 
+python visualize/result_vanilla_unet.py      # Vanilla U-Net (recommended)
+python visualize/result_enhanced_unet.py     # Enhanced U-Net
+python visualize/result_attention_unet.py    # Attention U-Net
+python visualize/result_hybrid.py            # Hybrid Multi-Scale
+python visualize/result_combined.py          # Combined results
+python visualize/per_regime_breakdown.py     # Breakdown by deformation regime
+python visualize/combined_visualization.py   # Combined figure generation
 ```
 
 

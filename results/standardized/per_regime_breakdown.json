@@ -1,0 +1,26 @@
+[
+  {
+    "regime": "continental_tectonic",
+    "n_patches": 2840,
+    "Vanilla_rmse_cm": 0.6662008166313171,
+    "Enhanced_rmse_cm": 0.7313990592956543,
+    "Attention_rmse_cm": 0.7667784094810486,
+    "Hybrid_rmse_cm": 0.9049471020698547
+  },
+  {
+    "regime": "glacio_tectonic",
+    "n_patches": 287,
+    "Vanilla_rmse_cm": 0.763543963432312,
+    "Enhanced_rmse_cm": 0.7843889594078064,
+    "Attention_rmse_cm": 0.8203827142715454,
+    "Hybrid_rmse_cm": 0.909246027469635
+  },
+  {
+    "regime": "volcanic",
+    "n_patches": 3103,
+    "Vanilla_rmse_cm": 0.7727819681167603,
+    "Enhanced_rmse_cm": 0.8700320720672607,
+    "Attention_rmse_cm": 0.9090981483459473,
+    "Hybrid_rmse_cm": 1.100427269935608
+  }
+]

@@ -1,0 +1,51 @@
+================================================================================
+MODEL PERFORMANCE COMPARISON — IEEE GRSL (Standardized Protocol)
+================================================================================
+
+Protocol: FP32 (no AMP), dropout=0.15 (all models), weight_decay=1e-4,
+identical Huber+Sobel-gradient loss, identical LR/batch size/epochs/patience.
+Only architecture differs.
+
+Vanilla U-Net:
+  RMSE:          1.070 cm
+  MAE:           0.603 cm
+  Median Error:  0.321 cm
+  Std Dev:       1.069 cm
+  95th %ile:     2.135 cm
+  99th %ile:     4.433 cm
+  Precision@0.5: 65.29%
+  Precision@1.0: 83.73%
+  Precision@2.0: 94.36%
+
+Attention U-Net:
+  RMSE:          1.439 cm
+  MAE:           0.817 cm
+  Median Error:  0.361 cm
+  Std Dev:       1.438 cm
+  95th %ile:     3.261 cm
+  99th %ile:     5.859 cm
+  Precision@0.5: 59.48%
+  Precision@1.0: 76.57%
+  Precision@2.0: 88.43%
+
+Enhanced U-Net:
+  RMSE:          1.325 cm
+  MAE:           0.771 cm
+  Median Error:  0.355 cm
+  Std Dev:       1.320 cm
+  95th %ile:     2.903 cm
+  99th %ile:     5.388 cm
+  Precision@0.5: 59.33%
+  Precision@1.0: 75.85%
+  Precision@2.0: 89.57%
+
+Hybrid Multi-Scale:
+  RMSE:          1.639 cm
+  MAE:           0.977 cm
+  Median Error:  0.430 cm
+  Std Dev:       1.637 cm
+  95th %ile:     3.481 cm
+  99th %ile:     5.962 cm
+  Precision@0.5: 53.87%
+  Precision@1.0: 69.52%
+  Precision@2.0: 83.29%
